@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.app {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url('./IMG_8878.jpg') top center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  /*background-color: #00205a;*/
+  color: #fff;
+}
+.app:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00205a;
+  opacity: 0.9;
+}
+.top {
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  height: calc(100% - 200px);
+  border-bottom: 1px solid #fff;
+}
+.top > .left, .top > .right {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  height: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.top > .right {
+  opacity: 0.55;
+}
+.top .blinds-label {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 80px;
+}
+.top > .center {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.top > .center > .level {
+  font-size: 80px;
+  text-align: center;
+}
+.top > .center > .timer {
+  font-size: 256px;
+  margin-bottom: 100px;
+}
+.small-blind-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.big-blind-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.small-blind-text, .big-blind-text {
+  font-size: 36px;
+}
+.small-blind-value, .big-blind-value {
+  font-size: 128px;
+}
+.center > .name {
+  text-align: center;
+  font-size: 64px;
+  margin-bottom: 50px;
+}
+.bottom {
+  position: relative;
+  display: flex;
+  height: 200px;
+  justify-content: space-around;
+}
+.bottom > .wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bottom > .wrapper > .key {
+  margin-bottom: 10px;
+  font-size: 46px;
+}
+.bottom > .wrapper > .value {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.seettings-toggler {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
