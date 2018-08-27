@@ -26,7 +26,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: #00205a;
-  opacity: 0.9;
+  opacity: 0.55;
 }
 .top {
   position: relative;
@@ -36,7 +36,7 @@ body {
   display: -o-flex;
   display: flex;
   justify-content: space-between;
-  height: calc(100% - 200px);
+  height: calc(100% - 250px);
   border-bottom: 1px solid #fff;
 }
 .top > .left, .top > .right {
@@ -53,7 +53,7 @@ body {
   flex-direction: column;
 }
 .top > .right {
-  opacity: 0.55;
+  opacity: 0.35;
 }
 .top .blinds-label {
   margin-bottom: 50px;
@@ -83,6 +83,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.prizes {
+  font-size: 36px;
+  text-align: center;
 }
 .big-blind-wrapper {
   display: flex;
@@ -121,8 +125,26 @@ body {
   font-size: 32px;
   margin-bottom: 10px;
 }
+.bottom .quantity {
+  font-size: 24px;
+}
 .seettings-toggler {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+.settings {
+  color: #000;
+}
+.settings button, .settings input, .settings select  {
+  margin: 10px;
+}
+.players {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #fff;
+  font-size: 36px;
 }
