@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {holdemCup, knockout, youngGuns} from './data';
 import './App.css';
+import Sound1 from './sound_1.mp3'
+import Sound2 from './sound_2.mp3'
+import Sound3 from './sound_3.mp3'
 
 class App extends Component {
   constructor(){
@@ -82,6 +85,19 @@ class App extends Component {
       this.setState({
         level: this.state.level+1,
       })
+    }
+    if (nextState.time === 3) {
+      switch (Math.round(0.5 + Math.random() * 3)){
+        case 1:
+          new Audio(Sound1).play();
+          break;
+        case 2:
+          new Audio(Sound2).play();
+          break;
+        case 3:
+          new Audio(Sound3).play();
+          break;
+      }
     }
   }
 
@@ -171,17 +187,17 @@ class App extends Component {
         this.setDefaultState(holdemCup);
         break;
       case('youngGuns'):
-          this.setDefaultState(youngGuns);
-          break;
+        this.setDefaultState(youngGuns);
+        break;
       case('knockout'):
-          this.setDefaultState(knockout)
+        this.setDefaultState(knockout)
         break;
     }
   };
   setPrizes = (e) =>{
-      this.setState({
-        prize: e.target.value
-      })
+    this.setState({
+      prize: e.target.value
+    })
   }
   render() {
     return (
@@ -208,9 +224,9 @@ class App extends Component {
             <div className="timer">
               {`${('0' +(this.state.time/3600).toFixed(0).slice(-2))}:${('0' + Math.floor((this.state.time/60))%60).slice(-2)}:${('0' +this.state.time % 60).slice(-2)}`}
             </div>
-              <div className="prizes">
-                  Prizes: {this.state.prize}
-              </div>
+            <div className="prizes">
+              Prizes: {this.state.prize}
+            </div>
           </div>
           <div className="right">
             <div className="blinds-label">Next</div>
