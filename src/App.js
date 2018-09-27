@@ -86,7 +86,7 @@ class App extends Component {
         level: this.state.level+1,
       })
     }
-    if (nextState.time === 3) {
+    if (nextState.time === 4) {
       switch (Math.round(0.5 + Math.random() * 3)){
         case 1:
           new Audio(Sound1).play();
