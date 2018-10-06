@@ -37,56 +37,48 @@ export const holdemCup = {
             duration: 15,
             smallBlind: 5,
             bigBlind: 10,
-            ante: 10
         },
         {
             name: '2 Уровень',
             duration: 15,
             smallBlind: 10,
             bigBlind: 20,
-            ante: 20
         },
         {
             name: '3 Уровень',
             duration: 15,
             smallBlind: 15,
             bigBlind: 30,
-            ante: 30
         },
         {
             name: '4 Уровень',
             duration: 15,
             smallBlind: 20,
             bigBlind: 40,
-            ante: 40
         },
         {
             name: '5 Уровень',
             duration: 15,
             smallBlind: 30,
             bigBlind: 60,
-            ante: 60
         },
         {
             name: '6 Уровень',
             duration: 15,
             smallBlind: 40,
             bigBlind: 80,
-            ante: 80
         },
         {
             name: '7 Уровень',
             duration: 12,
             smallBlind: 50,
             bigBlind: 100,
-            ante: 100
         },
         {
             name: '8 Уровень',
             duration: 12,
             smallBlind: 75,
             bigBlind: 150,
-            ante: 150
         },
         {
             name: '9 Уровень',
@@ -211,56 +203,48 @@ export const knockout = {
             duration: 15,
             smallBlind: 5,
             bigBlind: 10,
-            ante: 10
         },
         {
             name: '2 Уровень',
             duration: 15,
             smallBlind: 10,
             bigBlind: 20,
-            ante: 20
         },
         {
             name: '3 Уровень',
             duration: 15,
             smallBlind: 15,
             bigBlind: 30,
-            ante: 30
         },
         {
             name: '4 Уровень',
             duration: 15,
             smallBlind: 20,
             bigBlind: 40,
-            ante: 40
         },
         {
             name: '5 Уровень',
             duration: 15,
             smallBlind: 30,
             bigBlind: 60,
-            ante: 60
         },
         {
             name: '6 Уровень',
             duration: 15,
             smallBlind: 40,
             bigBlind: 80,
-            ante: 80
         },
         {
             name: '7 Уровень',
             duration: 15,
             smallBlind: 50,
             bigBlind: 100,
-            ante: 100
         },
         {
             name: '8 Уровень',
             duration: 15,
             smallBlind: 75,
             bigBlind: 150,
-            ante: 150
         },
         {
             name: '9 Уровень',
@@ -385,56 +369,48 @@ export const knockoutVIP = {
             duration: 15,
             smallBlind: 5,
             bigBlind: 10,
-            ante: 10
         },
         {
             name: '2 Уровень',
             duration: 15,
             smallBlind: 10,
             bigBlind: 20,
-            ante: 20
         },
         {
             name: '3 Уровень',
             duration: 15,
             smallBlind: 15,
             bigBlind: 30,
-            ante: 30
         },
         {
             name: '4 Уровень',
             duration: 15,
             smallBlind: 20,
             bigBlind: 40,
-            ante: 40
         },
         {
             name: '5 Уровень',
             duration: 15,
             smallBlind: 30,
             bigBlind: 60,
-            ante: 60
         },
         {
             name: '6 Уровень',
             duration: 15,
             smallBlind: 40,
             bigBlind: 80,
-            ante: 80
         },
         {
             name: '7 Уровень',
             duration: 15,
             smallBlind: 50,
             bigBlind: 100,
-            ante: 100
         },
         {
             name: '8 Уровень',
             duration: 15,
             smallBlind: 75,
             bigBlind: 150,
-            ante: 150
         },
         {
             name: '9 Уровень',
@@ -570,56 +546,48 @@ export const youngGuns = {
             duration: 12,
             smallBlind: 5,
             bigBlind: 10,
-            ante: 10
         },
         {
             name: '2 Уровень',
             duration: 12,
             smallBlind: 10,
             bigBlind: 20,
-            ante: 20
         },
         {
             name: '3 Уровень',
             duration: 12,
             smallBlind: 15,
             bigBlind: 30,
-            ante: 30
         },
         {
             name: '4 Уровень',
             duration: 12,
             smallBlind: 20,
             bigBlind: 40,
-            ante: 40
         },
         {
             name: '5 Уровень',
             duration: 12,
             smallBlind: 30,
             bigBlind: 60,
-            ante: 60
         },
         {
             name: '6 Уровень',
             duration: 12,
             smallBlind: 40,
             bigBlind: 80,
-            ante: 80
         },
         {
             name: '7 Уровень',
             duration: 10,
             smallBlind: 50,
             bigBlind: 100,
-            ante: 100
         },
         {
             name: '8 Уровень',
             duration: 10,
             smallBlind: 75,
             bigBlind: 150,
-            ante: 150
         },
         {
             name: '9 Уровень',
@@ -735,56 +703,48 @@ export const championsCup = {
             duration: 20,
             smallBlind: 5,
             bigBlind: 10,
-            ante: 10
         },
         {
             name: '2 Уровень',
             duration: 20,
             smallBlind: 10,
             bigBlind: 20,
-            ante: 20
         },
         {
             name: '3 Уровень',
             duration: 20,
             smallBlind: 15,
             bigBlind: 30,
-            ante: 30
         },
         {
             name: '4 Уровень',
             duration: 20,
             smallBlind: 20,
             bigBlind: 40,
-            ante: 40
         },
         {
             name: '5 Уровень',
             duration: 20,
             smallBlind: 30,
             bigBlind: 60,
-            ante: 60
         },
         {
             name: '6 Уровень',
             duration: 20,
             smallBlind: 40,
             bigBlind: 80,
-            ante: 80
         },
         {
             name: '7 Уровень',
             duration: 20,
             smallBlind: 50,
             bigBlind: 100,
-            ante: 100
         },
         {
             name: '8 Уровень',
             duration: 20,
             smallBlind: 75,
             bigBlind: 150,
-            ante: 150
         },
         {
             name: '9 Уровень',
