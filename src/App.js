@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {holdemCup, knockout, knockoutVIP, youngGuns, championsCup} from './data';
 import './App.css';
 import Sound1 from './sound_1.mp3'
-import Sound2 from './sound_2.mp3'
 import Sound3 from './sound_3.mp3'
 
 class App extends Component {
@@ -20,10 +19,8 @@ class App extends Component {
             breakDuration: 0,
             SB: 0,
             BB: 0,
-            ante: 0,
             nextSB: 0,
             nextBB: 0,
-            nextAnte: 0,
             schedule: [],
             fee:[],
             prize: 0,
@@ -87,17 +84,10 @@ class App extends Component {
             })
         }
         if (nextState.time === 4) {
-            switch (Math.round(0.5 + Math.random() * 3)){
-                case 1:
-                    new Audio(Sound1).play();
-                    break;
-                case 2:
-                    new Audio(Sound2).play();
-                    break;
-                case 3:
-                    new Audio(Sound3).play();
-                    break;
-            }
+            new Audio(Sound1).play();
+        }
+        if (nextState.time === 30) {
+            new Audio(Sound3).play();
         }
     }
 
@@ -221,7 +211,7 @@ class App extends Component {
                         </div>
                         <div className="big-blind-wrapper">
                             <div className="big-blind-text">Ante</div>
-                            <div id="bigBlind" className="big-blind-value">{this.state.ante}</div>
+                            <div id="bigBlind" className="big-blind-value">{this.state.level > 8 ? this.state.playersLeft > 5 ? this.state.BB : this.state.SB : '-'}</div>
                         </div>
                     </div>
                     <div className="center">
@@ -229,9 +219,6 @@ class App extends Component {
                         <div className="level">{this.state.level} Level</div>
                         <div className="timer">
                             {`${('0' +(this.state.time/3600).toFixed(0).slice(-2))}:${('0' + Math.floor((this.state.time/60))%60).slice(-2)}:${('0' +this.state.time % 60).slice(-2)}`}
-                        </div>
-                        <div className="prizes">
-                            Prizes: {this.state.prize}
                         </div>
                     </div>
                     <div className="right">
@@ -246,7 +233,7 @@ class App extends Component {
                         </div>
                         <div className="big-blind-wrapper">
                             <div className="big-blind-text">Ante</div>
-                            <div className="big-blind-value">{this.state.nextAnte}</div>
+                            <div className="big-blind-value">{this.state.level > 7 ? this.state.playersLeft > 5 ? this.state.nextBB : this.state.nextSB : '-'}</div>
                         </div>
                     </div>
                 </div>
@@ -258,8 +245,6 @@ class App extends Component {
                         <div onClick={() => this.addFee(item.name)} key={index} className="wrapper">
                             <div className="quantity">x{item.quantity}</div>
                             <div className="key">{item.name}</div>
-                            <div className="value">{item.cost} {this.state.currency}</div>
-                            <div className="value">{item.chips} Chips</div>
                         </div>
                     ))}
                 </div>
@@ -283,7 +268,6 @@ class App extends Component {
                             <option value="knockoutVIP">Knockout VIP</option>
                             <option value="champions">Champions</option>
                         </select>
-                        Призы: <input value={this.state.prize} onChange={this.setPrizes} type="text"/>
                     </div>
                 }
             </div>
