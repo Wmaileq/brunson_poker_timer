@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {holdemCup, knockout, knockoutVIP, youngGuns, championsCup} from './data';
 import './App.css';
 import Sound1 from './sound_1.mp3'
-import Sound2 from './sound_2.mp3'
 import Sound3 from './sound_3.mp3'
 
 class App extends Component {
@@ -20,13 +19,9 @@ class App extends Component {
             breakDuration: 0,
             SB: 0,
             BB: 0,
-            ante: 0,
             nextSB: 0,
             nextBB: 0,
-            nextAnte: 0,
             schedule: [],
-            fee:[],
-            prize: 0,
             playersLeft: 0,
             currency: 'BYN'
         }
@@ -87,17 +82,10 @@ class App extends Component {
             })
         }
         if (nextState.time === 4) {
-            switch (Math.round(0.5 + Math.random() * 3)){
-                case 1:
-                    new Audio(Sound1).play();
-                    break;
-                case 2:
-                    new Audio(Sound2).play();
-                    break;
-                case 3:
-                    new Audio(Sound3).play();
-                    break;
-            }
+            new Audio(Sound1).play();
+        }
+        if (nextState.time === 30) {
+            new Audio(Sound3).play();
         }
     }
 
@@ -111,13 +99,9 @@ class App extends Component {
             breakDuration: data.breakDuration,
             SB: data.schedule[0].smallBlind,
             BB: data.schedule[0].bigBlind,
-            ante: data.schedule[0].ante || '-',
             nextSB: data.schedule[1].smallBlind,
             nextBB: data.schedule[1].bigBlind,
-            nextAnte: data.schedule[1].ante || '-',
             schedule: data.schedule,
-            fee: data.fee.map(item => ({...item, quantity: 0})),
-            prize: data.prize,
             currency: data.currency,
         })
     }
@@ -161,11 +145,6 @@ class App extends Component {
             })
         }
     };
-    addFee(name) {
-        this.setState({
-            fee: this.state.fee.map(item => item.name === name ? {...item, quantity: item.quantity+1} : item)
-        })
-    }
     resetCounters = () => {
         this.setState({
             fee: this.state.fee.map(item => ({...item, quantity: 0}))
@@ -221,7 +200,9 @@ class App extends Component {
                         </div>
                         <div className="big-blind-wrapper">
                             <div className="big-blind-text">Ante</div>
-                            <div id="bigBlind" className="big-blind-value">{this.state.ante}</div>
+                            <div id="bigBlind" className="big-blind-value">{
+                                this.state.level > 8 ? (this.state.playersLeft > 5 ? this.state.BB : this.state.SB) : '-'
+                            }</div>
                         </div>
                     </div>
                     <div className="center">
@@ -229,9 +210,6 @@ class App extends Component {
                         <div className="level">{this.state.level} Level</div>
                         <div className="timer">
                             {`${('0' +(this.state.time/3600).toFixed(0).slice(-2))}:${('0' + Math.floor((this.state.time/60))%60).slice(-2)}:${('0' +this.state.time % 60).slice(-2)}`}
-                        </div>
-                        <div className="prizes">
-                            Prizes: {this.state.prize}
                         </div>
                     </div>
                     <div className="right">
@@ -246,22 +224,14 @@ class App extends Component {
                         </div>
                         <div className="big-blind-wrapper">
                             <div className="big-blind-text">Ante</div>
-                            <div className="big-blind-value">{this.state.nextAnte}</div>
+                            <div className="big-blind-value">{
+                                this.state.level > 7 ? (this.state.playersLeft > 5 ? this.state.nextBB : this.state.nextSB) : '-'
+                            }</div>
                         </div>
                     </div>
                 </div>
                 <div className="players">
                     <span onClick={this.decreasePlayer}>-</span> <span>Players left: {this.state.playersLeft}</span>  <span onClick={this.increasePlayer}>+</span>
-                </div>
-                <div className="bottom">
-                    {this.state.fee.map((item, index) => (
-                        <div onClick={() => this.addFee(item.name)} key={index} className="wrapper">
-                            <div className="quantity">x{item.quantity}</div>
-                            <div className="key">{item.name}</div>
-                            <div className="value">{item.cost} {this.state.currency}</div>
-                            <div className="value">{item.chips} Chips</div>
-                        </div>
-                    ))}
                 </div>
                 <button className="seettings-toggler" onClick={this.toggleSettings}>Toggle settings</button>
                 {
@@ -275,7 +245,6 @@ class App extends Component {
                         <button onClick={this.resetTimer}>Восстановить уровень</button>
                         <button onClick={this.endLevel}>Закончить уровень\перерыв</button>
                         <button onClick={this.prevLevel}>Предыдущий уровень</button>
-                        <button onClick={this.resetCounters}>Обнулить счетчики бай-инов\ребаев</button>
                         <select onChange={this.changeTourney}>
                             <option value="holdemCup">Holdem Cup</option>
                             <option value="youngGuns">Young guns</option>
